@@ -1,19 +1,20 @@
 ﻿// прогрмма-проверка палиндрома
 Console.Clear();
-Console.WriteLine("Введите пятизначное число, которое необходимо проверить");
-string number = Convert.ToString(Console.ReadLine());
-if (number.Length != 5)
+Console.WriteLine("Введите число (слово), которое необходимо проверить");
+string number = (Console.ReadLine());
+int lastIndex = number.Length - 1;
+bool palindrom (string number)
 {
-    Console.WriteLine($"Указаное число не является пятизначным");
+    for (int i = 0; i < number.Length / 2; i++)
+        if (number[lastIndex -i] != number[0 +i])
+            return false;
+        return true;
 }
-else
-{
-    if (number[0] == number[4] & number[1] == number[3]) 
+    if (palindrom(number))
     {
-        Console.WriteLine($"Указаное число - палиндром");
+        Console.WriteLine("Введеное Вами число (слово) является палиндромом");
     }
-    else
+    else 
     {
-        Console.WriteLine($"Указаное число - НЕ палиндром"); 
-    }    
-}
+        Console.WriteLine("Введеное Вами число (слово) не является палиндромом");
+    }
